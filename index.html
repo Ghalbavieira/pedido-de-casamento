@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet">
+    <title>Nosso Momento Especial 💍</title>
+  
+</head>
+<body>
+    <div class="light-beam"></div>
+    <div class="floating-hearts" id="floatingHearts"></div>
+    <div class="hearts" id="hearts"></div>
+    
+    <div class="container">
+        <div class="section">
+            <h1 onclick="createBurst()">✨ Nossa História ✨</h1>
+            <p class="quote" onclick="createHeartBurst()">"De todos os lugares do mundo, o meu favorito é ao seu lado."</p>
+            <p>Cada momento ao seu lado foi especial. Cada risada, cada conversa, cada olhar... Tudo construiu o que somos hoje. Você transformou minha vida em algo mágico e inesquecível.</p>
+        </div>
+
+        <div class="section">
+            <h2 onclick="createStarBurst()">💫 Nossos Momentos Inesquecíveis</h2>
+            <div class="timeline">
+                <div class="timeline-item" onclick="createMiniCelebration(event)">
+                    <div class="timeline-icon">🌟</div>
+                    <div class="timeline-date">Primeiro Encontro</div>
+                    <div class="timeline-text">O dia em que tudo começou. Seus olhos brilhavam e eu soube que minha vida mudaria para sempre.</div>
+                </div>
+                <div class="timeline-item" onclick="createMiniCelebration(event)">
+                    <div class="timeline-icon">✈️</div>
+                    <div class="timeline-date">Primeira Viagem</div>
+                    <div class="timeline-text">Descobrimos o mundo juntos e cada lugar ganhou mais cor ao seu lado.</div>
+                </div>
+                <div class="timeline-item" onclick="createMiniCelebration(event)">
+                    <div class="timeline-icon">🎂</div>
+                    <div class="timeline-date">Nosso Primeiro Ano</div>
+                    <div class="timeline-text">365 dias de amor, cumplicidade e certeza de que você é a pessoa certa.</div>
+                </div>
+                <div class="timeline-item" onclick="createMiniCelebration(event)">
+                    <div class="timeline-icon">☕</div>
+                    <div class="timeline-date">Momentos Simples</div>
+                    <div class="timeline-text">Cafés da manhã na cama, filmes no sofá, risadas sem motivo... Os melhores momentos da minha vida.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 onclick="createPhotoBurst()">📸 Nossos Melhores Momentos</h2>
+            <div class="gallery">
+                <div class="photo-placeholder" onclick="photoClick(this)">📷</div>
+                <div class="photo-placeholder" onclick="photoClick(this)">💑</div>
+                <div class="photo-placeholder" onclick="photoClick(this)">🌅</div>
+                <div class="photo-placeholder" onclick="photoClick(this)">❤️</div>
+                <div class="photo-placeholder" onclick="photoClick(this)">🌹</div>
+                <div class="photo-placeholder" onclick="photoClick(this)">🎭</div>
+            </div>
+            <p style="font-size: 0.9em; opacity: 0.8; margin-top: 25px;">
+                *Clique nas fotos para uma surpresa! 💕*
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 onclick="createLoveBurst()">💖 O Que Eu Mais Amo em Você</h2>
+            <div class="love-reasons">
+                <div class="love-card" onclick="cardClick(this)">
+                    <span class="love-card-icon">😊</span>
+                    <p>Seu sorriso que ilumina meus dias mais difíceis</p>
+                </div>
+                <div class="love-card" onclick="cardClick(this)">
+                    <span class="love-card-icon">💭</span>
+                    <p>Sua forma de me entender sem precisar de palavras</p>
+                </div>
+                <div class="love-card" onclick="cardClick(this)">
+                    <span class="love-card-icon">💪</span>
+                    <p>Sua força que me inspira todos os dias</p>
+                </div>
+                <div class="love-card" onclick="cardClick(this)">
+                    <span class="love-card-icon">✨</span>
+                    <p>A maneira como você faz da nossa rotina algo mágico</p>
+                </div>
+                <div class="love-card" onclick="cardClick(this)">
+                    <span class="love-card-icon">🌟</span>
+                    <p>Como você me faz querer ser uma pessoa melhor</p>
+                </div>
+                <div class="love-card" onclick="cardClick(this)">
+                    <span class="love-card-icon">🤗</span>
+                    <p>Seu abraço que é meu lugar favorito no mundo</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section proposal-section">
+            <div class="ring-container">
+                <span class="sparkle" onclick="sparkleClick()">✨</span>
+                <span class="sparkle" onclick="sparkleClick()">✨</span>
+                <span class="sparkle" onclick="sparkleClick()">✨</span>
+                <span class="sparkle" onclick="sparkleClick()">✨</span>
+                <span class="ring-icon" onclick="ringClick()">💍</span>
+            </div>
+            <p class="proposal-text">Agora, só falta uma coisa...</p>
+            <h1 style="font-size: 4em; margin: 40px 0;">Casa Comigo?</h1>
+            <button class="btn-yes" onclick="celebrate()">✨ SIM, EU ACEITO! ✨</button>
+            
+            <div class="final-message" id="finalMessage">
+                <p style="font-size: 2.5em;">🎉✨ ESSE É SÓ O COMEÇO! ✨🎉</p>
+                <p style="font-size: 1.5em; margin-top: 40px;">Te amo mais do que tudo nesse universo! 💕🌟💖</p>
+                <p style="font-size: 1.2em; margin-top: 30px; font-style: italic; opacity: 0.9;">
+                    Obrigado por dizer sim. Mal posso esperar para construir todos os nossos sonhos juntos. Você é e sempre será o amor da minha vida. Para sempre! 💍👰‍♀️🤵‍♂️
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script><script>
+</body>
+</html>
