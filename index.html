@@ -8,109 +8,134 @@
   
 </head>
 <body>
-    <div class="light-beam"></div>
-    <div class="floating-hearts" id="floatingHearts"></div>
-    <div class="hearts" id="hearts"></div>
+    <div class="particles" id="particles"></div>
     
     <div class="container">
         <div class="section">
-            <h1 onclick="createBurst()">✨ Nossa História ✨</h1>
-            <p class="quote" onclick="createHeartBurst()">"De todos os lugares do mundo, o meu favorito é ao seu lado."</p>
-            <p>Cada momento ao seu lado foi especial. Cada risada, cada conversa, cada olhar... Tudo construiu o que somos hoje. Você transformou minha vida em algo mágico e inesquecível.</p>
-        </div>
-
-        <div class="section">
-            <h2 onclick="createStarBurst()">💫 Nossos Momentos Inesquecíveis</h2>
-            <div class="timeline">
-                <div class="timeline-item" onclick="createMiniCelebration(event)">
-                    <div class="timeline-icon">🌟</div>
-                    <div class="timeline-date">Primeiro Encontro</div>
-                    <div class="timeline-text">O dia em que tudo começou. Seus olhos brilhavam e eu soube que minha vida mudaria para sempre.</div>
-                </div>
-                <div class="timeline-item" onclick="createMiniCelebration(event)">
-                    <div class="timeline-icon">✈️</div>
-                    <div class="timeline-date">Primeira Viagem</div>
-                    <div class="timeline-text">Descobrimos o mundo juntos e cada lugar ganhou mais cor ao seu lado.</div>
-                </div>
-                <div class="timeline-item" onclick="createMiniCelebration(event)">
-                    <div class="timeline-icon">🎂</div>
-                    <div class="timeline-date">Nosso Primeiro Ano</div>
-                    <div class="timeline-text">365 dias de amor, cumplicidade e certeza de que você é a pessoa certa.</div>
-                </div>
-                <div class="timeline-item" onclick="createMiniCelebration(event)">
-                    <div class="timeline-icon">☕</div>
-                    <div class="timeline-date">Momentos Simples</div>
-                    <div class="timeline-text">Cafés da manhã na cama, filmes no sofá, risadas sem motivo... Os melhores momentos da minha vida.</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2 onclick="createPhotoBurst()">📸 Nossos Melhores Momentos</h2>
-            <div class="gallery">
-                <div class="photo-placeholder" onclick="photoClick(this)">📷</div>
-                <div class="photo-placeholder" onclick="photoClick(this)">💑</div>
-                <div class="photo-placeholder" onclick="photoClick(this)">🌅</div>
-                <div class="photo-placeholder" onclick="photoClick(this)">❤️</div>
-                <div class="photo-placeholder" onclick="photoClick(this)">🌹</div>
-                <div class="photo-placeholder" onclick="photoClick(this)">🎭</div>
-            </div>
-            <p style="font-size: 0.9em; opacity: 0.8; margin-top: 25px;">
-                *Clique nas fotos para uma surpresa! 💕*
+            <h1>Nossa Jornada</h1>
+            <p class="intro-text">
+                Há momentos na vida que mudam tudo. Encontrar você foi um deles. 
+                O que começou como um encontro casual transformou-se na certeza mais profunda que já tive.
             </p>
         </div>
 
         <div class="section">
-            <h2 onclick="createLoveBurst()">💖 O Que Eu Mais Amo em Você</h2>
-            <div class="love-reasons">
-                <div class="love-card" onclick="cardClick(this)">
-                    <span class="love-card-icon">😊</span>
-                    <p>Seu sorriso que ilumina meus dias mais difíceis</p>
+            <h2>Os Capítulos da Nossa História</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">O Início</div>
+                    <div class="timeline-content">
+                        <h3>Quando nos Conhecemos</h3>
+                        <p>Lembro de cada detalhe daquele dia. A forma como você sorriu, 
+                        o jeito como conversamos por horas sem perceber o tempo passar. 
+                        Foi quando soube que havia encontrado algo raro.</p>
+                    </div>
                 </div>
-                <div class="love-card" onclick="cardClick(this)">
-                    <span class="love-card-icon">💭</span>
-                    <p>Sua forma de me entender sem precisar de palavras</p>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">Primeira Viagem</div>
+                    <div class="timeline-content">
+                        <h3>Descobrindo o Mundo Juntos</h3>
+                        <p>Cada lugar ganhou um novo significado ao seu lado. Não eram apenas destinos, 
+                        eram memórias sendo construídas, histórias que só nós dois conhecemos.</p>
+                    </div>
                 </div>
-                <div class="love-card" onclick="cardClick(this)">
-                    <span class="love-card-icon">💪</span>
-                    <p>Sua força que me inspira todos os dias</p>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">Crescimento</div>
+                    <div class="timeline-content">
+                        <h3>Construindo Algo Real</h3>
+                        <p>Passamos por desafios, celebramos vitórias, construímos rotinas. 
+                        Descobri que o amor verdadeiro não é apenas emoção, é escolha diária, 
+                        é parceria, é crescer junto.</p>
+                    </div>
                 </div>
-                <div class="love-card" onclick="cardClick(this)">
-                    <span class="love-card-icon">✨</span>
-                    <p>A maneira como você faz da nossa rotina algo mágico</p>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">Hoje</div>
+                    <div class="timeline-content">
+                        <h3>A Certeza</h3>
+                        <p>Depois de todo esse tempo, uma coisa se tornou cristalina: 
+                        não quero imaginar minha vida sem você. Cada dia confirma o que meu coração já sabia.</p>
+                    </div>
                 </div>
-                <div class="love-card" onclick="cardClick(this)">
-                    <span class="love-card-icon">🌟</span>
-                    <p>Como você me faz querer ser uma pessoa melhor</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Momentos Capturados</h2>
+            <div class="gallery">
+                <div class="photo-frame">📷</div>
+                <div class="photo-frame">🌙</div>
+                <div class="photo-frame">🥂</div>
+                <div class="photo-frame">🌅</div>
+                <div class="photo-frame">🎭</div>
+                <div class="photo-frame">✈️</div>
+            </div>
+            <p style="font-size: 0.95em; opacity: 0.6; margin-top: 30px; font-style: italic;">
+                Cada imagem conta uma parte da nossa história
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Por Que Você</h2>
+            <div class="reasons-grid">
+                <div class="reason-card">
+                    <h3>Sua Presença</h3>
+                    <p>Você tem essa capacidade única de fazer qualquer lugar parecer certo. 
+                    Não importa onde estamos, ao seu lado é onde eu quero estar.</p>
                 </div>
-                <div class="love-card" onclick="cardClick(this)">
-                    <span class="love-card-icon">🤗</span>
-                    <p>Seu abraço que é meu lugar favorito no mundo</p>
+                
+                <div class="reason-card">
+                    <h3>Sua Força</h3>
+                    <p>A maneira como você enfrenta a vida me inspira todos os dias. 
+                    Sua determinação, sua resiliência, sua capacidade de seguir em frente.</p>
+                </div>
+                
+                <div class="reason-card">
+                    <h3>Nossa Conexão</h3>
+                    <p>Existe algo raro entre nós. Uma compreensão silenciosa, 
+                    uma sintonia que vai além das palavras. É o tipo de conexão que se encontra uma vez na vida.</p>
+                </div>
+                
+                <div class="reason-card">
+                    <h3>Como Você Me Faz Sentir</h3>
+                    <p>Ao seu lado, sou a melhor versão de mim mesmo. 
+                    Você me desafia, me apoia, me entende. Você me faz querer ser mais.</p>
+                </div>
+                
+                <div class="reason-card">
+                    <h3>Nosso Futuro</h3>
+                    <p>Quando penso no amanhã, você está em cada plano, em cada sonho. 
+                    Não consigo mais imaginar um futuro onde você não esteja presente.</p>
+                </div>
+                
+                <div class="reason-card">
+                    <h3>Simplesmente Você</h3>
+                    <p>No final, não é sobre uma lista de razões. É sobre o sentimento inexplicável 
+                    de que você é a pessoa certa. A única pessoa.</p>
                 </div>
             </div>
         </div>
 
         <div class="section proposal-section">
-            <div class="ring-container">
-                <span class="sparkle" onclick="sparkleClick()">✨</span>
-                <span class="sparkle" onclick="sparkleClick()">✨</span>
-                <span class="sparkle" onclick="sparkleClick()">✨</span>
-                <span class="sparkle" onclick="sparkleClick()">✨</span>
-                <span class="ring-icon" onclick="ringClick()">💍</span>
-            </div>
-            <p class="proposal-text">Agora, só falta uma coisa...</p>
-            <h1 style="font-size: 4em; margin: 40px 0;">Casa Comigo?</h1>
-            <button class="btn-yes" onclick="celebrate()">✨ SIM, EU ACEITO! ✨</button>
+            <div class="ring-symbol">💍</div>
+            <p class="proposal-question">Casa Comigo?</p>
+            <button class="btn-answer" onclick="celebrate()">Sim</button>
             
             <div class="final-message" id="finalMessage">
-                <p style="font-size: 2.5em;">🎉✨ ESSE É SÓ O COMEÇO! ✨🎉</p>
-                <p style="font-size: 1.5em; margin-top: 40px;">Te amo mais do que tudo nesse universo! 💕🌟💖</p>
-                <p style="font-size: 1.2em; margin-top: 30px; font-style: italic; opacity: 0.9;">
-                    Obrigado por dizer sim. Mal posso esperar para construir todos os nossos sonhos juntos. Você é e sempre será o amor da minha vida. Para sempre! 💍👰‍♀️🤵‍♂️
+                <h2>Este é o Nosso Novo Começo</h2>
+                <p>
+                    Obrigado por dizer sim. Por escolher construir uma vida ao meu lado. 
+                    Por acreditar no que temos e no que ainda vamos construir juntos.
+                </p>
+                <p style="margin-top: 40px; font-family: 'Cormorant Garamond', serif; font-size: 1.5em; color: #d4af37;">
+                    Para sempre será apenas o começo.
                 </p>
             </div>
         </div>
     </div>
+
 
     <script src="main.js"></script>
 </body>

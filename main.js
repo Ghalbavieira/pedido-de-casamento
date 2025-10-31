@@ -1,267 +1,113 @@
-
-        // Criar corações flutuantes de fundo
-        function createFloatingHeart() {
-            const heart = document.createElement('div');
-            heart.className = 'floating-heart';
-            heart.innerHTML = ['❤️', '💕', '💖', '💗', '💝', '💘'][Math.floor(Math.random() * 6)];
-            heart.style.left = Math.random() * 100 + '%';
-            heart.style.animationDuration = (Math.random() * 10 + 10) + 's';
-            heart.style.animationDelay = Math.random() * 5 + 's';
-            document.getElementById('floatingHearts').appendChild(heart);
+ function createParticle() {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDuration = (Math.random() * 15 + 15) + 's';
+            particle.style.animationDelay = Math.random() * 5 + 's';
+            document.getElementById('particles').appendChild(particle);
             
-            setTimeout(() => heart.remove(), 20000);
+            setTimeout(() => particle.remove(), 25000);
         }
 
-        for(let i = 0; i < 25; i++) {
-            setTimeout(() => createFloatingHeart(), i * 400);
-        }
-        
-        setInterval(() => createFloatingHeart(), 2000);
-
-        // Funções interativas
-        function createBurst() {
-            for(let i = 0; i < 10; i++) {
-                setTimeout(() => createHeart(), i * 50);
-            }
+        for(let i = 0; i < 50; i++) {
+            setTimeout(() => createParticle(), i * 200);
         }
 
-        function createHeartBurst() {
-            for(let i = 0; i < 15; i++) {
-                setTimeout(() => createHeart(), i * 30);
-            }
-        }
+        setInterval(() => createParticle(), 3000);
 
-        function createStarBurst() {
-            for(let i = 0; i < 12; i++) {
-                setTimeout(() => {
-                    const star = document.createElement('div');
-                    star.className = 'heart';
-                    star.innerHTML = '⭐';
-                    star.style.left = Math.random() * 100 + '%';
-                    document.getElementById('hearts').appendChild(star);
-                    setTimeout(() => star.remove(), 4000);
-                }, i * 40);
-            }
-        }
-
-        function createPhotoBurst() {
-            const emojis = ['📷', '💑', '🌅', '❤️', '🌹', '🎭'];
-            for(let i = 0; i < 15; i++) {
-                setTimeout(() => {
-                    const photo = document.createElement('div');
-                    photo.className = 'heart';
-                    photo.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
-                    photo.style.left = Math.random() * 100 + '%';
-                    document.getElementById('hearts').appendChild(photo);
-                    setTimeout(() => photo.remove(), 4000);
-                }, i * 40);
-            }
-        }
-
-        function createLoveBurst() {
-            const loveEmojis = ['💕', '💖', '💗', '💝', '💘'];
-            for(let i = 0; i < 20; i++) {
-                setTimeout(() => {
-                    const love = document.createElement('div');
-                    love.className = 'heart';
-                    love.innerHTML = loveEmojis[Math.floor(Math.random() * loveEmojis.length)];
-                    love.style.left = Math.random() * 100 + '%';
-                    document.getElementById('hearts').appendChild(love);
-                    setTimeout(() => love.remove(), 4000);
-                }, i * 30);
-            }
-        }
-
-        function createMiniCelebration(event) {
-            const rect = event.currentTarget.getBoundingClientRect();
-            for(let i = 0; i < 8; i++) {
-                setTimeout(() => {
-                    const confetti = document.createElement('div');
-                    confetti.className = 'confetti';
-                    const colors = ['#ff6b9d', '#c06c84', '#f8b195', '#ffd93d', '#6bcf7f'];
-                    confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
-                    confetti.style.left = (rect.left + rect.width / 2) + 'px';
-                    confetti.style.top = rect.top + 'px';
-                    confetti.style.position = 'fixed';
-                    document.body.appendChild(confetti);
-                    setTimeout(() => confetti.remove(), 4000);
-                }, i * 50);
-            }
-        }
-
-        function photoClick(element) {
-            element.style.transform = 'scale(1.3) rotate(720deg)';
-            setTimeout(() => {
-                element.style.transform = '';
-            }, 600);
-            
-            for(let i = 0; i < 10; i++) {
-                setTimeout(() => {
-                    const heart = document.createElement('div');
-                    heart.className = 'heart';
-                    heart.innerHTML = '💕';
-                    heart.style.left = Math.random() * 100 + '%';
-                    document.getElementById('hearts').appendChild(heart);
-                    setTimeout(() => heart.remove(), 4000);
-                }, i * 30);
-            }
-        }
-
-        function cardClick(element) {
-            element.style.transform = 'scale(1.2) rotate(360deg)';
-            setTimeout(() => {
-                element.style.transform = '';
-            }, 500);
-            
-            for(let i = 0; i < 8; i++) {
-                setTimeout(() => createHeart(), i * 40);
-            }
-        }
-
-        function sparkleClick() {
-            for(let i = 0; i < 5; i++) {
-                setTimeout(() => {
-                    const sparkle = document.createElement('div');
-                    sparkle.className = 'heart';
-                    sparkle.innerHTML = '✨';
-                    sparkle.style.left = Math.random() * 100 + '%';
-                    document.getElementById('hearts').appendChild(sparkle);
-                    setTimeout(() => sparkle.remove(), 3000);
-                }, i * 50);
-            }
-        }
-
-        function ringClick() {
-            for(let i = 0; i < 20; i++) {
-                setTimeout(() => {
-                    const confetti = document.createElement('div');
-                    confetti.className = 'confetti';
-                    const colors = ['#ff6b9d', '#c06c84', '#ffd93d', '#6bcf7f', '#fff'];
-                    confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
-                    confetti.style.left = '50%';
-                    confetti.style.top = '30%';
-                    confetti.style.position = 'fixed';
-                    document.body.appendChild(confetti);
-                    setTimeout(() => confetti.remove(), 4000);
-                }, i * 30);
-            }
-        }
-
+        // Celebração sofisticada com festa romântica
         function celebrate() {
-            const btn = document.querySelector('.btn-yes');
+            const btn = document.querySelector('.btn-answer');
             btn.style.display = 'none';
             
-            // Explosão ÉPICA de corações
-            for(let i = 0; i < 150; i++) {
+            // Chuva de rosas elegantes
+            const roses = ['🌹', '🥀', '💐'];
+            for(let i = 0; i < 40; i++) {
                 setTimeout(() => {
-                    createHeart();
-                }, i * 30);
+                    const rose = document.createElement('div');
+                    rose.className = 'celebration-particle';
+                    rose.innerHTML = roses[Math.floor(Math.random() * roses.length)];
+                    rose.style.left = (Math.random() * 100) + '%';
+                    rose.style.top = '-10%';
+                    rose.style.fontSize = (Math.random() * 2 + 1.5) + 'em';
+                    rose.style.animation = 'rosefall ' + (Math.random() * 2 + 3) + 's ease-out forwards';
+                    document.body.appendChild(rose);
+                    
+                    setTimeout(() => rose.remove(), 5000);
+                }, i * 80);
             }
             
-            // Chuva de confetes coloridos
-            for(let i = 0; i < 300; i++) {
-                setTimeout(() => {
-                    createConfetti();
-                }, i * 15);
-            }
-            
-            // Adicionar emojis extras
-            const celebrationEmojis = ['🎉', '🎊', '✨', '💫', '⭐', '🌟'];
+            // Explosão de corações elegantes
+            const hearts = ['❤️', '💕', '💖', '💗', '💝'];
             for(let i = 0; i < 50; i++) {
                 setTimeout(() => {
-                    const emoji = document.createElement('div');
-                    emoji.className = 'heart';
-                    emoji.innerHTML = celebrationEmojis[Math.floor(Math.random() * celebrationEmojis.length)];
-                    emoji.style.left = Math.random() * 100 + '%';
-                    emoji.style.fontSize = (Math.random() * 2 + 2) + 'em';
-                    document.getElementById('hearts').appendChild(emoji);
-                    setTimeout(() => emoji.remove(), 5000);
+                    const heart = document.createElement('div');
+                    heart.className = 'celebration-particle';
+                    heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+                    heart.style.left = (Math.random() * 100) + '%';
+                    heart.style.top = '50%';
+                    heart.style.fontSize = (Math.random() * 2 + 1) + 'em';
+                    heart.style.animation = 'heartBurst ' + (Math.random() * 2 + 2) + 's ease-out forwards';
+                    document.body.appendChild(heart);
+                    
+                    setTimeout(() => heart.remove(), 4000);
                 }, i * 50);
+            }
+            
+            // Confetes dourados
+            for(let i = 0; i < 60; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.style.position = 'fixed';
+                    confetti.style.left = (Math.random() * 100) + '%';
+                    confetti.style.top = '-10px';
+                    confetti.style.width = '10px';
+                    confetti.style.height = '10px';
+                    confetti.style.background = ['#d4af37', '#ffd700', '#fff', '#ff6b9d'][Math.floor(Math.random() * 4)];
+                    confetti.style.borderRadius = '50%';
+                    confetti.style.pointerEvents = 'none';
+                    confetti.style.zIndex = '9999';
+                    confetti.style.animation = 'confettiFall ' + (Math.random() * 2 + 3) + 's ease-out forwards';
+                    confetti.style.boxShadow = '0 0 10px ' + confetti.style.background;
+                    document.body.appendChild(confetti);
+                    
+                    setTimeout(() => confetti.remove(), 5000);
+                }, i * 40);
+            }
+            
+            // Sparkles dourados
+            for(let i = 0; i < 30; i++) {
+                setTimeout(() => {
+                    const sparkle = document.createElement('div');
+                    sparkle.className = 'celebration-particle';
+                    sparkle.innerHTML = '✨';
+                    sparkle.style.left = (Math.random() * 100) + '%';
+                    sparkle.style.top = (Math.random() * 100) + '%';
+                    sparkle.style.fontSize = (Math.random() * 1.5 + 1) + 'em';
+                    sparkle.style.animation = 'sparklePop ' + (Math.random() * 1 + 1) + 's ease-out forwards';
+                    document.body.appendChild(sparkle);
+                    
+                    setTimeout(() => sparkle.remove(), 2000);
+                }, i * 70);
             }
             
             // Mostrar mensagem final
             setTimeout(() => {
-                document.getElementById('finalMessage').style.display = 'block';
-            }, 2500);
-            
-            // Scroll suave
-            setTimeout(() => {
-                document.getElementById('finalMessage').scrollIntoView({ 
-                    behavior: 'smooth',
-                    block: 'center'
-                });
-            }, 3000);
-        }
-        
-        function createHeart() {
-            const heart = document.createElement('div');
-            heart.className = 'heart';
-            const hearts = ['❤️', '💕', '💖', '💗', '💝', '💘', '💞'];
-            heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
-            heart.style.left = Math.random() * 100 + '%';
-            heart.style.animationDuration = (Math.random() * 2 + 3) + 's';
-            heart.style.fontSize = (Math.random() * 2 + 2) + 'em';
-            document.getElementById('hearts').appendChild(heart);
-            
-            setTimeout(() => heart.remove(), 5000);
-        }
-        
-        function createConfetti() {
-            const confetti = document.createElement('div');
-            confetti.className = 'confetti';
-            const colors = ['#ff6b9d', '#c06c84', '#f8b195', '#355c7d', '#ffd93d', '#6bcf7f', '#fff', '#ff85a2'];
-            confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
-            confetti.style.left = Math.random() * 100 + '%';
-            confetti.style.top = '-20px';
-            confetti.style.position = 'fixed';
-            confetti.style.boxShadow = '0 0 15px ' + confetti.style.background;
-            document.body.appendChild(confetti);
-            
-            setTimeout(() => confetti.remove(), 4000);
-        }
-
-        // Easter egg: Apertar teclas especiais
-        let konamiCode = [];
-        const konamiSequence = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight'];
-        
-        document.addEventListener('keydown', (e) => {
-            konamiCode.push(e.key);
-            if(konamiCode.length > konamiSequence.length) {
-                konamiCode.shift();
-            }
-            
-            if(JSON.stringify(konamiCode) === JSON.stringify(konamiSequence)) {
-                superCelebration();
-                konamiCode = [];
-            }
-        });
-
-        function superCelebration() {
-            for(let i = 0; i < 50; i++) {
-                setTimeout(() => {
-                    createHeart();
-                    createConfetti();
-                    createConfetti();
-                }, i * 20);
-            }
-        }
-
-        let lastParticleTime = 0;
-        document.addEventListener('mousemove', (e) => {
-            const now = Date.now();
-            if(now - lastParticleTime > 200) {
-                const particle = document.createElement('div');
-                particle.style.position = 'fixed';
-                particle.style.left = e.clientX + 'px';
-                particle.style.top = e.clientY + 'px';
-                particle.style.fontSize = '1.5em';
-                particle.innerHTML = ['✨', '💫', '⭐'][Math.floor(Math.random() * 3)];
-                particle.style.pointerEvents = 'none';
-                particle.style.animation = 'sparkle 1s ease-out forwards';
-                particle.style.zIndex = '9999';
-                document.body.appendChild(particle);
+                const finalMsg = document.getElementById('finalMessage');
+                finalMsg.style.display = 'block';
                 
-                setTimeout(() => particle.remove(), 1000);
-                lastParticleTime = now;
-            }
+                setTimeout(() => {
+                    finalMsg.scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'center'
+                    });
+                }, 100);
+            }, 2500);
+        }
+
+        // Efeito parallax suave
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const particles = document.getElementById('particles');
+            particles.style.transform = `translateY(${scrolled * 0.3}px)`;
         });
