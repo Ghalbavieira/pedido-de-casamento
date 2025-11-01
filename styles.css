@@ -1,4 +1,4 @@
- @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Lato:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Lato:wght@300;400&display=swap');
 
         * {
             margin: 0;
@@ -194,26 +194,90 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.5em;
-            transition: all 0.5s ease;
-            cursor: pointer;
             position: relative;
             overflow: hidden;
+            cursor: pointer;
         }
 
-        .photo-frame::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
+        .carousel {
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
-            transition: left 0.8s ease;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .photo-frame:hover::before {
-            left: 100%;
+        .carousel-image {
+            width: 100%;
+            height: 100%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5em;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(255, 255, 255, 0.05));
+            transition: all 0.5s ease;
+        }
+
+        .carousel-image.active {
+            display: flex;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(212, 175, 55, 0.3);
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            color: #d4af37;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+            font-size: 1.5em;
+            backdrop-filter: blur(10px);
+        }
+
+        .carousel-nav:hover {
+            background: rgba(212, 175, 55, 0.5);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-prev {
+            left: 10px;
+        }
+
+        .carousel-next {
+            right: 10px;
+        }
+
+        .carousel-dots {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+
+        .carousel-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-dot.active {
+            background: #d4af37;
+            width: 24px;
+            border-radius: 4px;
         }
 
         .photo-frame:hover {
@@ -291,27 +355,124 @@
             pointer-events: none;
         }
 
-        .ring-symbol {
-            font-size: 5em;
-            margin: 30px 0;
-            display: inline-block;
-            opacity: 0;
-            animation: ringAppear 2s ease forwards;
-            animation-delay: 0.5s;
+        .gift-box {
+            width: 200px;
+            height: 200px;
+            margin: 50px auto;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease;
         }
 
-        @keyframes ringAppear {
-            0% {
-                opacity: 0;
-                transform: scale(0.5) rotate(-180deg);
-            }
-            60% {
-                transform: scale(1.1) rotate(10deg);
-            }
-            100% {
+        .gift-box:hover {
+            transform: scale(1.05);
+        }
+
+        .box-base {
+            width: 200px;
+            height: 140px;
+            background: linear-gradient(135deg, #8b0000, #dc143c);
+            border: 3px solid #d4af37;
+            position: absolute;
+            bottom: 0;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .box-lid {
+            width: 220px;
+            height: 70px;
+            background: linear-gradient(135deg, #a00000, #e74c3c);
+            border: 3px solid #d4af37;
+            position: absolute;
+            top: 0;
+            left: -10px;
+            transition: all 0.8s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .box-ribbon-v {
+            width: 30px;
+            height: 100%;
+            background: #d4af37;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .box-ribbon-h {
+            width: 100%;
+            height: 30px;
+            background: #d4af37;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .box-bow {
+            width: 60px;
+            height: 40px;
+            background: #d4af37;
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 50% 50% 0 0;
+            box-shadow: 0 3px 15px rgba(212, 175, 55, 0.5);
+        }
+
+        .box-bow::before,
+        .box-bow::after {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: #d4af37;
+            border-radius: 50%;
+            top: 10px;
+        }
+
+        .box-bow::before {
+            left: -25px;
+        }
+
+        .box-bow::after {
+            right: -25px;
+        }
+
+        .gift-box.opening .box-lid {
+            transform: translateY(-100px) rotateX(-30deg);
+            opacity: 0.8;
+        }
+
+        .proposal-content {
+            display: none;
+            opacity: 0;
+            animation: revealContent 1s ease forwards;
+            animation-delay: 0.8s;
+        }
+
+        .proposal-content.show {
+            display: block;
+        }
+
+        @keyframes revealContent {
+            to {
                 opacity: 1;
-                transform: scale(1) rotate(0deg);
             }
+        }
+
+        .ring-symbol {
+            font-size: 6em;
+            margin: 30px 0;
+            display: inline-block;
+            animation: ringFloat 2s ease-in-out infinite;
+        }
+
+        @keyframes ringFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
         }
 
         .proposal-question {
@@ -321,15 +482,6 @@
             margin: 40px 0;
             font-weight: 300;
             letter-spacing: 3px;
-            opacity: 0;
-            animation: textFadeIn 1.5s ease forwards;
-            animation-delay: 1.5s;
-        }
-
-        @keyframes textFadeIn {
-            to {
-                opacity: 1;
-            }
         }
 
         .btn-answer {
@@ -345,9 +497,6 @@
             margin-top: 40px;
             text-transform: uppercase;
             font-weight: 400;
-            opacity: 0;
-            animation: textFadeIn 1.5s ease forwards;
-            animation-delay: 2s;
             position: relative;
             overflow: hidden;
         }
@@ -418,6 +567,50 @@
             100% {
                 opacity: 0;
                 transform: translateY(-100vh) scale(0.5);
+            }
+        }
+
+        @keyframes rosefall {
+            0% {
+                opacity: 1;
+                transform: translateY(-10vh) rotate(0deg);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(110vh) rotate(360deg);
+            }
+        }
+
+        @keyframes heartBurst {
+            0% {
+                opacity: 1;
+                transform: translateY(0) scale(0.5) rotate(0deg);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(110vh) scale(1) rotate(360deg);
+            }
+        }
+
+        @keyframes confettiFall {
+            0% {
+                opacity: 1;
+                transform: translateY(-10vh) rotate(0deg);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(110vh) rotate(720deg);
+            }
+        }
+
+        @keyframes sparklePop {
+            0% {
+                opacity: 1;
+                transform: translateY(-10vh) scale(0.5);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(110vh) scale(1);
             }
         }
 

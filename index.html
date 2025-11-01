@@ -65,15 +65,93 @@
         <div class="section">
             <h2>Momentos Capturados</h2>
             <div class="gallery">
-                <div class="photo-frame">📷</div>
-                <div class="photo-frame">🌙</div>
-                <div class="photo-frame">🥂</div>
-                <div class="photo-frame">🌅</div>
-                <div class="photo-frame">🎭</div>
-                <div class="photo-frame">✈️</div>
+                <div class="photo-frame">
+                    <div class="carousel" data-carousel="1">
+                        <div class="carousel-image active">📷</div>
+                        <div class="carousel-image">💑</div>
+                        <div class="carousel-image">❤️</div>
+                        <button class="carousel-nav carousel-prev" onclick="changeSlide(1, -1)">‹</button>
+                        <button class="carousel-nav carousel-next" onclick="changeSlide(1, 1)">›</button>
+                        <div class="carousel-dots">
+                            <span class="carousel-dot active" onclick="goToSlide(1, 0)"></span>
+                            <span class="carousel-dot" onclick="goToSlide(1, 1)"></span>
+                            <span class="carousel-dot" onclick="goToSlide(1, 2)"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="photo-frame">
+                    <div class="carousel" data-carousel="2">
+                        <div class="carousel-image active">🌙</div>
+                        <div class="carousel-image">⭐</div>
+                        <div class="carousel-image">✨</div>
+                        <button class="carousel-nav carousel-prev" onclick="changeSlide(2, -1)">‹</button>
+                        <button class="carousel-nav carousel-next" onclick="changeSlide(2, 1)">›</button>
+                        <div class="carousel-dots">
+                            <span class="carousel-dot active" onclick="goToSlide(2, 0)"></span>
+                            <span class="carousel-dot" onclick="goToSlide(2, 1)"></span>
+                            <span class="carousel-dot" onclick="goToSlide(2, 2)"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="photo-frame">
+                    <div class="carousel" data-carousel="3">
+                        <div class="carousel-image active">🥂</div>
+                        <div class="carousel-image">🍷</div>
+                        <div class="carousel-image">🌹</div>
+                        <button class="carousel-nav carousel-prev" onclick="changeSlide(3, -1)">‹</button>
+                        <button class="carousel-nav carousel-next" onclick="changeSlide(3, 1)">›</button>
+                        <div class="carousel-dots">
+                            <span class="carousel-dot active" onclick="goToSlide(3, 0)"></span>
+                            <span class="carousel-dot" onclick="goToSlide(3, 1)"></span>
+                            <span class="carousel-dot" onclick="goToSlide(3, 2)"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="photo-frame">
+                    <div class="carousel" data-carousel="4">
+                        <div class="carousel-image active">🌅</div>
+                        <div class="carousel-image">🌄</div>
+                        <div class="carousel-image">🌇</div>
+                        <button class="carousel-nav carousel-prev" onclick="changeSlide(4, -1)">‹</button>
+                        <button class="carousel-nav carousel-next" onclick="changeSlide(4, 1)">›</button>
+                        <div class="carousel-dots">
+                            <span class="carousel-dot active" onclick="goToSlide(4, 0)"></span>
+                            <span class="carousel-dot" onclick="goToSlide(4, 1)"></span>
+                            <span class="carousel-dot" onclick="goToSlide(4, 2)"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="photo-frame">
+                    <div class="carousel" data-carousel="5">
+                        <div class="carousel-image active">🎭</div>
+                        <div class="carousel-image">🎬</div>
+                        <div class="carousel-image">🎪</div>
+                        <button class="carousel-nav carousel-prev" onclick="changeSlide(5, -1)">‹</button>
+                        <button class="carousel-nav carousel-next" onclick="changeSlide(5, 1)">›</button>
+                        <div class="carousel-dots">
+                            <span class="carousel-dot active" onclick="goToSlide(5, 0)"></span>
+                            <span class="carousel-dot" onclick="goToSlide(5, 1)"></span>
+                            <span class="carousel-dot" onclick="goToSlide(5, 2)"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="photo-frame">
+                    <div class="carousel" data-carousel="6">
+                        <div class="carousel-image active">✈️</div>
+                        <div class="carousel-image">🗺️</div>
+                        <div class="carousel-image">🎒</div>
+                        <button class="carousel-nav carousel-prev" onclick="changeSlide(6, -1)">‹</button>
+                        <button class="carousel-nav carousel-next" onclick="changeSlide(6, 1)">›</button>
+                        <div class="carousel-dots">
+                            <span class="carousel-dot active" onclick="goToSlide(6, 0)"></span>
+                            <span class="carousel-dot" onclick="goToSlide(6, 1)"></span>
+                            <span class="carousel-dot" onclick="goToSlide(6, 2)"></span>
+                        </div>
+                    </div>
+                </div>
             </div>
             <p style="font-size: 0.95em; opacity: 0.6; margin-top: 30px; font-style: italic;">
-                Cada imagem conta uma parte da nossa história
+                Use as setas para navegar pelos momentos especiais
             </p>
         </div>
 
@@ -119,9 +197,21 @@
         </div>
 
         <div class="section proposal-section">
-            <div class="ring-symbol">💍</div>
-            <p class="proposal-question">Casa Comigo?</p>
-            <button class="btn-answer" onclick="celebrate()">Sim</button>
+            <div class="gift-box" id="giftBox" onclick="openGift()">
+                <div class="box-lid" id="boxLid">
+                    <div class="box-bow"></div>
+                </div>
+                <div class="box-base">
+                    <div class="box-ribbon-v"></div>
+                    <div class="box-ribbon-h"></div>
+                </div>
+            </div>
+
+            <div class="proposal-content" id="proposalContent">
+                <div class="ring-symbol">💍</div>
+                <p class="proposal-question">Casa Comigo?</p>
+                <button class="btn-answer" onclick="celebrate()">Sim</button>
+            </div>
             
             <div class="final-message" id="finalMessage">
                 <h2>Este é o Nosso Novo Começo</h2>
@@ -135,7 +225,6 @@
             </div>
         </div>
     </div>
-
 
     <script src="main.js"></script>
 </body>

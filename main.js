@@ -1,4 +1,54 @@
- function createParticle() {
+ // Carrossel de fotos
+        const carouselStates = {};
+
+        function changeSlide(carouselId, direction) {
+            const carousel = document.querySelector(`[data-carousel="${carouselId}"]`);
+            const images = carousel.querySelectorAll('.carousel-image');
+            const dots = carousel.querySelectorAll('.carousel-dot');
+            
+            if (!carouselStates[carouselId]) {
+                carouselStates[carouselId] = 0;
+            }
+            
+            images[carouselStates[carouselId]].classList.remove('active');
+            dots[carouselStates[carouselId]].classList.remove('active');
+            
+            carouselStates[carouselId] = (carouselStates[carouselId] + direction + images.length) % images.length;
+            
+            images[carouselStates[carouselId]].classList.add('active');
+            dots[carouselStates[carouselId]].classList.add('active');
+        }
+
+        function goToSlide(carouselId, index) {
+            const carousel = document.querySelector(`[data-carousel="${carouselId}"]`);
+            const images = carousel.querySelectorAll('.carousel-image');
+            const dots = carousel.querySelectorAll('.carousel-dot');
+            
+            if (carouselStates[carouselId] !== undefined) {
+                images[carouselStates[carouselId]].classList.remove('active');
+                dots[carouselStates[carouselId]].classList.remove('active');
+            }
+            
+            carouselStates[carouselId] = index;
+            images[index].classList.add('active');
+            dots[index].classList.add('active');
+        }
+
+        // Abrir caixa de presente
+        function openGift() {
+            const giftBox = document.getElementById('giftBox');
+            const proposalContent = document.getElementById('proposalContent');
+            
+            giftBox.classList.add('opening');
+            
+            setTimeout(() => {
+                giftBox.style.display = 'none';
+                proposalContent.classList.add('show');
+            }, 1000);
+        }
+
+        // Criar partículas de fundo
+        function createParticle() {
             const particle = document.createElement('div');
             particle.className = 'particle';
             particle.style.left = Math.random() * 100 + '%';
@@ -30,6 +80,9 @@
                     rose.style.left = (Math.random() * 100) + '%';
                     rose.style.top = '-10%';
                     rose.style.fontSize = (Math.random() * 2 + 1.5) + 'em';
+                    rose.style.position = 'fixed';
+                    rose.style.zIndex = '9999';
+                    rose.style.pointerEvents = 'none';
                     rose.style.animation = 'rosefall ' + (Math.random() * 2 + 3) + 's ease-out forwards';
                     document.body.appendChild(rose);
                     
@@ -45,8 +98,11 @@
                     heart.className = 'celebration-particle';
                     heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
                     heart.style.left = (Math.random() * 100) + '%';
-                    heart.style.top = '50%';
+                    heart.style.top = '-10%';
                     heart.style.fontSize = (Math.random() * 2 + 1) + 'em';
+                    heart.style.position = 'fixed';
+                    heart.style.zIndex = '9999';
+                    heart.style.pointerEvents = 'none';
                     heart.style.animation = 'heartBurst ' + (Math.random() * 2 + 2) + 's ease-out forwards';
                     document.body.appendChild(heart);
                     
@@ -82,12 +138,15 @@
                     sparkle.className = 'celebration-particle';
                     sparkle.innerHTML = '✨';
                     sparkle.style.left = (Math.random() * 100) + '%';
-                    sparkle.style.top = (Math.random() * 100) + '%';
+                    sparkle.style.top = '-10%';
                     sparkle.style.fontSize = (Math.random() * 1.5 + 1) + 'em';
-                    sparkle.style.animation = 'sparklePop ' + (Math.random() * 1 + 1) + 's ease-out forwards';
+                    sparkle.style.position = 'fixed';
+                    sparkle.style.zIndex = '9999';
+                    sparkle.style.pointerEvents = 'none';
+                    sparkle.style.animation = 'sparklePop ' + (Math.random() * 1 + 2) + 's ease-out forwards';
                     document.body.appendChild(sparkle);
                     
-                    setTimeout(() => sparkle.remove(), 2000);
+                    setTimeout(() => sparkle.remove(), 3000);
                 }, i * 70);
             }
             
